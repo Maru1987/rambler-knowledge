@@ -1,0 +1,89 @@
+import java.util.Scanner;
+
+public class SeleccionAreasYPerimetros {
+
+	public static void main(String[] args) {
+
+		int opcion;
+
+		System.out.println("Bienvenido a áreas y perímetros\n\n1ºCalcular área y perímetro de un triángulo;\n"
+				+ "2ºCalcular área y perímetro de un rectángulo;\n"
+				+ "3ºCalcular área y perímetro de una circunferencia.\n\nElija una opción:");
+
+		Scanner sc = new Scanner(System.in);
+		opcion = sc.nextInt();
+
+		laOpcionElegida(opcion);
+	}
+
+	public static void laOpcionElegida(int opcion) {
+
+		switch (opcion) {
+		case 1:
+			System.out.println("La opción elegida ha sido triángulo\n\n");
+			System.out.println("Ingresemos su lado base y la altura para hallar su área:\n");
+
+			Scanner sc = new Scanner(System.in);
+			int baseLadoA = sc.nextInt();
+			int altura = sc.nextInt();
+			sc.nextLine();
+
+			double area = (baseLadoA * altura) / 2.0;
+
+			System.out.println("El área del triángulo es:\n" + area + "\n");
+			System.out.println("Ahora ingrese sus dos lados restantes para hallar su perímetro:\n");
+
+			int ladoB = sc.nextInt();
+			int ladoC = sc.nextInt();
+			sc.nextLine();
+
+			int perimetro = baseLadoA + ladoB + ladoC;
+			System.out.println("Su perímetro es:\n" + perimetro);
+			System.out.println("RESÚMEN:\n*LADOS:" + baseLadoA + "," + ladoB + "," + ladoC + "\n*ÁREA:" + area
+					+ "\n*PERÍMETRO:" + perimetro);
+			break;
+
+		case 2:
+			System.out.println("La opción elegida ha sido rectángulo\n\n");
+
+			System.out.println("Ingresemos su largo y su ancho:\n");
+
+			Scanner sc2 = new Scanner(System.in);
+			double rectLargo = sc2.nextDouble();
+			double rectAncho = sc2.nextDouble();
+			sc2.nextLine();
+
+			double area1 = (rectLargo * rectAncho);
+			double perimetro1 = (rectLargo * 2.0) + (rectAncho * 2);
+			System.out.println("RESÚMEN:\n*LARGO:" + rectLargo + ",\n*ANCHO:" + rectAncho + "\n*ÁREA:" + area1
+					+ "\n*PERÍMETRO:" + perimetro1);
+			break;
+
+		case 3:
+
+			System.out.println("La opción elegida ha sido circunferencia");
+
+			System.out.println("Ingresemos su radio:\n");
+
+			Scanner sc3 = new Scanner(System.in);
+			double radio = sc3.nextDouble();
+			sc3.nextLine();
+
+			double PI = 3.1416;
+			double diametro = radio * 2;
+			double area3 = radio * radio * PI;
+			double perimetro3 = diametro * PI;
+
+			System.out.println("RESÚMEN:\n*RADIO:" + radio + ",\n*DIÁMETRO:" + diametro + "\n*ÁREA:" + area3
+					+ "\n*PERÍMETRO:" + perimetro3);
+
+			break;
+
+		default:
+			System.out.println("No ha elegido una de las opciones establecidas, elija un número del uno al tres");
+			break;
+		}
+
+	}
+
+}
